@@ -37,7 +37,7 @@ nav h2{
 
 .form{
   display: grid;
-  grid-template: 35px 35px /1fr 1fr;
+  grid-template: 40px 40px /1fr 1fr;
   gap: 10px;
 }
 
@@ -56,4 +56,13 @@ nav h2{
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
+}
+
+
+.box{
+  border: 3px solid hsl(0, 100%, 50%);
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
 }

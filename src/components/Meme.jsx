@@ -2,11 +2,6 @@ import React from "react";
 
 const Meme= () => {
 
-
-
-
-
-
     return(
 
             <div className="form row">
@@ -22,7 +17,6 @@ const Meme= () => {
                 />
 
                  <button className="form_btn">Get a new meme image</button>
-
 
             </div>
     )
