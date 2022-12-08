@@ -3,7 +3,7 @@ import React from "react";
 const Form = () => {
 
     const [formData, setFormData] = React.useState(
-        {firstName: "", lastName: "", emailAddress: ""}
+        {firstName: "", lastName: "", emailAddress: "",comment: ""}
         )
         console.log(formData)
 
@@ -16,13 +16,22 @@ const Form = () => {
     })
     }
 
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log(formData)
+    }
+    
+
     return(
-        <form className="form row">
+
+        <form onSubmit={handleSubmit}
+         className="form row">
             <input 
              type="text"
              placeholder="First name"
              onChange={handleChange}
              name="firstName"
+             value={formData.firstName}
             />
 
             <input 
@@ -30,6 +39,7 @@ const Form = () => {
              placeholder="Last name"
              onChange={handleChange}
              name="lastName"
+             value={formData.lastName}
             />
 
             <input 
@@ -37,8 +47,15 @@ const Form = () => {
              placeholder="Email"
              onChange={handleChange}
              name="emailAddress"
+             value={formData.emailAddress}
             />
-
+            <textarea 
+            name="comment"
+            placeholder="type in your comments here"
+            onChange={handleChange}
+            value={formData.comment}
+            />
+            <button >Submit</button>
         </form>
     )
 }
