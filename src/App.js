@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
+import Form from "./Form";
+
+
 
 function App() {
 
@@ -9,6 +12,8 @@ function App() {
     <div className="App">
       {/* < Header />
       <Meme /> */}
+
+      <Form />
 
     </div>
   );
