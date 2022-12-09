@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
 import Form from "./Form";
+import FormData from "./FormData";
 
 
 
@@ -12,8 +13,7 @@ function App() {
     <div className="App">
       {/* < Header />
       <Meme /> */}
-
-      <Form />
+      <FormData />
 
     </div>
   );
