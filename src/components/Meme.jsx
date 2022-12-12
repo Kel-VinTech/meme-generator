@@ -2,12 +2,14 @@ import React,{ useEffect, useState }  from "react";
 
 const Meme= () => {
     
-    const [meme, setmeme] = React.useState({
+    const [meme, setMeme] = useState({
         topText:"",
         bottomText:"",
         randomImage:"https://i.imgflip.com/1bij.jpg"
     })
-    const [allMeme, setAllMeme] = React.useState([])
+
+    const [allMeme, setAllMeme] = useState([])
+
     useEffect(() => {
         fetch("https://i.imgflip.com/1bij.jpg")
         .then(res => res.json())
@@ -17,7 +19,7 @@ const Meme= () => {
     const getMemeImg =() => {
         const randomImage = Math.floor(Math.random() * allMeme.length)
         const url = allMeme[randomImage].url
-        setmeme(prevMeme => ({
+        setMeme(prevMeme => ({
             ...prevMeme,
             randomImage:url
         }))
@@ -25,7 +27,7 @@ const Meme= () => {
 
     const handleChange= (e) => {
         const {name, value} = e.target
-        setmeme(prevMeme => ({
+        setMeme(prevMeme => ({
             ...prevMeme,
             [name]: value
         }))
@@ -55,12 +57,12 @@ const Meme= () => {
                  onClick={getMemeImg}
                  >Get a new meme image</button>
 
-                 <div>
+                 <div className="meme">
                     <img src={meme.randomImage}  alt="memeImg"
                     className="meme_img" 
                     />
-                    <h2 className="top_text">{meme.topText}</h2>
-                    <h2 className="bottom_text">{meme.bottomText}</h2>
+                    <h2 className="meme_text top_text">{meme.topText}</h2>
+                    <h2 className="meme_text bottom_text">{meme.bottomText}</h2>
                  </div>
 
             </div>
