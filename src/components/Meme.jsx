@@ -9,16 +9,16 @@ const Meme= () => {
     })
 
     const [allMeme, setAllMeme] = useState([])
-
     useEffect(() => {
-        fetch("https://i.imgflip.com/1bij.jpg")
+    
+        fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
         .then(data => setAllMeme(data.data.meme))
     })
 
     const getMemeImg =() => {
-        const randomImage = Math.floor(Math.random() * allMeme.length)
-        const url = allMeme[randomImage].url
+        const randomNumber = Math.floor(Math.random() * allMeme.length)
+        const url = allMeme[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage:url
