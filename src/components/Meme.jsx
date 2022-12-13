@@ -13,7 +13,7 @@ const Meme= () => {
     
         fetch("https://api.imgflip.com/get_memes")
         .then(res => res.json())
-        .then(data => setAllMeme(data.data.memes))
+        .then(data => setAllMeme(Response.data.memes))
     })
 
     const getMemeImg =() => {
