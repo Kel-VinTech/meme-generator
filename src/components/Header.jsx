@@ -5,7 +5,7 @@ const Header = () => {
     return(
         <nav>
             <img className="logo" src={logo} alt="logo"/>
-            <h2>Kelvin.eth</h2>
+            <h2>Produced by Kelvin.eth</h2>
         </nav>
     )
 }
